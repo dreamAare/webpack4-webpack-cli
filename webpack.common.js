@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {
   CleanWebpackPlugin
 } = require('clean-webpack-plugin')
+// const ViewFileList = require('./plugins/viewFileList') // 自定义 webpack 插件(生成markdown文件)
+const WatcherPlugin = require('./plugins/watcherPlugin') // 自定义 webpack 插件(监听模式下，输出变化)
 
 module.exports = {
   entry: './src/index.js',
@@ -12,8 +14,10 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    // new ViewFileList({filename: 'lrz-fileList.md'}),
+    new WatcherPlugin(),
     new HtmlWebpackPlugin({
-      title: 'webpack bundle'
+      title: '自定义插件'
     })
   ],
   module: {

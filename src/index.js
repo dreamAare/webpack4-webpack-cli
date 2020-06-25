@@ -7,7 +7,7 @@ function component() {
   element.innerHTML = "Hello Webpack";
 
   element.addEventListener('click', function () {
-    console.log(123)
+    console.log(1)
   })
 
   return element;
